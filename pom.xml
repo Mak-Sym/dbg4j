@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dbg4j</groupId>
+    <artifactId>dbg4j</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>dbg4j</name>
+    <description>
+        Dbg4j - java debugging library
+    </description>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <id>mak-sym</id>
+            <name>Maksym Fedoryshyn</name>
+            <email>maksym.fedoryshyn@gmail.com</email>
+            <timezone>-6</timezone>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>dbg4j-core</module>
+        <module>dbg4j-web</module>
+        <module>dbg4j-spring</module>
+        <module>dbg4j-jersey</module>
+        <module>dbg4j-log</module>
+    </modules>
+    
+    <scm>
+        <url>http://github.com/Mak-Sym/dbg4j.git</url>
+        <connection>scm:git:ssh://git@github.com/Mak-Sym/dbg4j.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/Mak-Sym/dbg4j.git</developerConnection>
+      <tag>HEAD</tag>
+  </scm>
+
+</project>

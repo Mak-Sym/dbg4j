@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="Dbg4j-spring ${project.version}">
+    <version position="left"/>
+    <publishDate position="right" format="yyyy-MM-dd"/>
+
+    <bannerLeft>
+        <name>Dbg4j-spring ${project.version}</name>
+        <href>index.html</href>
+    </bannerLeft>
+
+    <bannerRight>
+        <src>images/logo.png</src>
+        <href></href>
+    </bannerRight>
+
+    <body>
+        <links>
+            <item name="Home" href="index.html"/>
+            <item name="Release Notes" href="releases.html"/>
+        </links>
+
+        <menu name="Docs">
+            <item name="Release Notes" href="releases.html"/>
+        </menu>
+
+        <menu ref="reports"/>
+    </body>
+</project>
+        
