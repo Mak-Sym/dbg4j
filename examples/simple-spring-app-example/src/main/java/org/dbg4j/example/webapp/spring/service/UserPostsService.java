@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.dbg4j.core.annotations.Debug;
 import org.dbg4j.example.webapp.spring.domain.Post;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserPostsService {
 
+    @Debug
     public List<Post> getPosts(String userId) {
         Random random = new Random(new Date().getTime());
         int numOfPosts = random.nextInt(10) + 1;
@@ -32,6 +34,7 @@ public class UserPostsService {
         return posts;
     }
 
+    @Debug
     public Post getPost(long postId) {
         Random random = new Random(new Date().getTime());
         Post post = new Post();
@@ -41,6 +44,7 @@ public class UserPostsService {
         return post;
     }
 
+    @Debug
     private String generateRandomText(int nWords) {
         Random random = new Random(new Date().getTime());
         StringBuilder sb = new StringBuilder();

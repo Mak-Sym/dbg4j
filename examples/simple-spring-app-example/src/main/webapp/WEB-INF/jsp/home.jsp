@@ -2,6 +2,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib prefix="debug" tagdir="/WEB-INF/tags/debug" %>
 
 <html>
 <head>
@@ -10,6 +11,9 @@
             type="text/javascript"></script>
 </head>
 <body>
+
+<%-- tag shows debug information - nothing special, usual collapsible list --%>
+<debug:debug />
 
 <h1>You are home, ${user.firstName}</h1>
 

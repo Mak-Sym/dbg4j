@@ -12,6 +12,7 @@ import javax.ws.rs.core.UriInfo;
 
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.dbg4j.core.annotations.Debug;
 import org.dbg4j.example.webapp.spring.domain.Post;
 import org.dbg4j.example.webapp.spring.domain.User;
 import org.dbg4j.example.webapp.spring.service.UserPostsService;
@@ -38,6 +39,7 @@ public class RestApiResource {
     UserPostsService userPostsService;
 
     @Context
+    @Debug
     private UriInfo uriInfo;
 
     protected static final ObjectMapper mapper = new ObjectMapper(){
@@ -49,6 +51,7 @@ public class RestApiResource {
     @GET
     @Path("/posts/{userEmail}")
     @Produces("application/json")
+    @Debug
     public String get(@PathParam("userEmail") String userEmail) throws IOException {
         List<Post> posts = userPostsService.getPosts(userService.getUser(userEmail).getId());
 
@@ -62,6 +65,7 @@ public class RestApiResource {
     @GET
     @Path("/users/{userEmail}")
     @Produces("application/json")
+    @Debug
     public User getUser(@PathParam("userEmail") String userEmail) throws IOException {
         User user = userService.getUser(userEmail);
         if (user == null) {

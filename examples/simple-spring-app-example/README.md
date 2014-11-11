@@ -17,7 +17,7 @@ mvn clean jetty:run
 
 Integration with dbg4j is exposed into separate commit, so it is possible to estimate the efforts for integration.
 
-Open in your browser:
+To see how it works, please run the app and open in your browser:
 
 controller:
   - [http://127.0.0.1:8080/home.html] [cntrlr1]

@@ -3,6 +3,7 @@ package org.dbg4j.example.webapp.spring.service;
 import java.util.Arrays;
 import java.util.UUID;
 
+import org.dbg4j.core.annotations.Debug;
 import org.dbg4j.example.webapp.spring.domain.User;
 import org.jfairy.Fairy;
 import org.jfairy.producer.person.Person;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserService {
 
+    @Debug
     public User getCurrentUser(){
         User user = new User();
         Fairy fairy = Fairy.create();
@@ -30,6 +32,7 @@ public class UserService {
         return user;
     }
 
+    @Debug
     public User getUser(String userEmail){
         User user = new User();
         Fairy fairy = Fairy.create();

@@ -1,0 +1,15 @@
+<!DOCTYPE aspectj PUBLIC
+        "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+
+<!-- This file is used by AspectJ to weave in aspects into our classes. -->
+<aspectj>
+    <weaver options="-verbose -showWeaveInfo">
+        <include within="org.dbg4j.example.webapp.spring..*"/>
+
+        <exclude within="*..*CGLIB*"/>
+    </weaver>
+
+    <aspects>
+        <aspect name="org.dbg4j.core.aop.DebuggingAspect" />
+    </aspects>
+</aspectj>

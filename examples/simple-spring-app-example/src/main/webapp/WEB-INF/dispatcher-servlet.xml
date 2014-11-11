@@ -19,4 +19,31 @@
             base-package="org.dbg4j.example.webapp.spring.controller,
             org.dbg4j.example.webapp.spring.rest,
             org.dbg4j.example.webapp.spring.service" />
+
+    <!-- Integration with dbg4j starts here -->
+    <mvc:interceptors>
+        <bean id="debugInterceptor" class="org.dbg4j.web.spring.DebugInterceptor">
+            <property name="disabled" value="false" />
+            <property name="debugAllowanceStrategy" ref="myWebAppAllowanceStrategy" />
+        </bean>
+    </mvc:interceptors>
+
+
+    <bean id="myWebAppAllowanceStrategy"
+          class="org.dbg4j.example.webapp.spring.debugintegration.MyWebAppAllowanceStrategy"/>
+
+    <bean id="logAppender" class="org.dbg4j.log.log4j.Log4jFilterableAppender">
+        <property name="eventType" value="CONTEXT_COMMIT" />
+    </bean>
+
+    <bean id="myWebAppDebugFilter" class="org.dbg4j.example.webapp.spring.debugintegration.MyWebAppDebugFilter">
+        <property name="disabled" value="false" />
+        <property name="debugAllowanceStrategy" ref="myWebAppAllowanceStrategy" />
+        <property name="listeners">
+            <list>
+                <ref bean="logAppender" />
+            </list>
+        </property>
+    </bean>
+
 </beans>
